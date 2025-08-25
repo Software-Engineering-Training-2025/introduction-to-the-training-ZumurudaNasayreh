@@ -9,14 +9,19 @@ public class Calculator {
     public double calculate(double a, double b, Operator op) {
         if (op == Operator.ADD) {
             return a + b;
-        } else if (op == Operator.SUBTRACT) {
+        }
+        if(b == 0) {
+            throw new ArithmeticException();
+        }
+        else if (op == Operator.SUBTRACT) {
             return a - b;
         } else if (op == Operator.MULTIPLY) {
             return a * b;
         } else if (op == Operator.DIVIDE) {
             // throw an ArithmeticException when b == 0
             return a / b;
-        } else {
+        }
+        else {
             throw new IllegalArgumentException("Unknown operator");
         }
     }
